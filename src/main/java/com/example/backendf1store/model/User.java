@@ -9,12 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "User")
 @Getter
 @Setter
-public class USER {
+public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,9 +40,11 @@ public class USER {
   @Column(name = "user_email", unique = true)
   private String uEmail;
 
+  @CreationTimestamp
   @Column(name = "user_createTime")
   private Timestamp createTime;
 
+  @UpdateTimestamp
   @Column(name = "user_modifiedTime")
   private Timestamp modifiedTime;
 }
