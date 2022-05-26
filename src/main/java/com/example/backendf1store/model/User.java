@@ -7,15 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name = "User")
-@Getter
-@Setter
 public class User {
 
   @Id
@@ -31,9 +27,6 @@ public class User {
   @Column(name = "user_name")
   private String uName;
 
-  @Column(name = "user_gender")
-  private String uGender;
-
   @Column(name = "user_Phone", unique = true)
   private String uPhone;
 
@@ -47,4 +40,68 @@ public class User {
   @UpdateTimestamp
   @Column(name = "user_modifiedTime")
   private Timestamp modifiedTime;
+
+  public long getuId() {
+    return uId;
+  }
+
+  public void setuId(long uId) {
+    this.uId = uId;
+  }
+
+  public String getuAccount() {
+    return uAccount;
+  }
+
+  public void setuAccount(String uAccount) {
+    this.uAccount = uAccount;
+  }
+
+  public String getuPWD() {
+    return uPWD;
+  }
+
+  public void setuPWD(String uPWD) {
+    this.uPWD = uPWD;
+  }
+
+  public String getuName() {
+    return uName;
+  }
+
+  public void setuName(String uName) {
+    this.uName = uName;
+  }
+
+  public String getuPhone() {
+    return uPhone;
+  }
+
+  public void setuPhone(String uPhone) {
+    this.uPhone = uPhone;
+  }
+
+  public String getuEmail() {
+    return uEmail;
+  }
+
+  public void setuEmail(String uEmail) {
+    this.uEmail = uEmail;
+  }
+
+  public Timestamp getCreateTime() {
+    return createTime;
+  }
+
+  public void setCreateTime(Timestamp createTime) {
+    this.createTime = createTime;
+  }
+
+  public Timestamp getModifiedTime() {
+    return modifiedTime;
+  }
+
+  public void setModifiedTime(Timestamp modifiedTime) {
+    this.modifiedTime = modifiedTime;
+  }
 }
