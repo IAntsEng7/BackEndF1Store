@@ -19,13 +19,13 @@ public class DriverController {
 
   // Driver List
   @GetMapping("/driverList")
-  public List<Driver> getAllDriver(){
+  public List<Driver> getAllDriver() {
     return driverRepo.findAll();
   }
 
   // Create a new driver
-  @PostMapping("/createNewDriver")
-  public Driver createDriver(Driver driver){
+  @PostMapping("/registerNewDriver")
+  public Driver registerNewDriver(Driver driver) {
     return driverRepo.save(driver);
   }
 
